@@ -8,10 +8,15 @@
       <Unit>
         <Filename Value="Ej6.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos Y="27"/>
         <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\TP3\EJ1\EJ1.lpr"/>
+        <IsVisibleTab Value="True"/>
+        <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\i386-win32\fpc.exe" Date="1449426723"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq -FiC:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ2\lib\i386-win32 -FuC:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ2\ -FUC:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ2\lib\i386-win32\ -FEC:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ2\ -oC:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ2\Ej2.exe Ej2.lpr"/>
+</CONFIG>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Ej2.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LiquidacionSueldos"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="67"/>
+        <CursorPos X="42" Y="91"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="12">
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="22" Column="127"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="37" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="36" Column="5" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="53" Column="52" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="27" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="93" Column="15" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="92" Column="39" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="32" Column="47"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="42" Column="51" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="20" Column="11" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="39" Column="20" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="28" Column="68" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="Ej2.lpr"/>
+        <Caret Line="51" Column="54" TopLine="41"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
