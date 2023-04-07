@@ -6,7 +6,7 @@ var
   countMax : integer;
 
 begin
-  assign(Arch, 'C:\Users\nicob\INGE\PROGRAMACION1\TP3\EJ1\text.txt');
+  assign(Arch, 'C:\Usuarios\nicob\INGE\PROGRAMACION1\TP3\EJ1\text.txt');
   reset(Arch);
 
   while not eof(Arch) do
