@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="EJ7.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="10"/>
+        <CursorPos X="53" Y="57"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="10">
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="26" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="27" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="12" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="42" Column="23"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="48" Column="32"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="37" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="50" Column="36" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="40" Column="23" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="52" Column="34" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="37" Column="41" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="EJ7.lpr"/>
+        <Caret Line="50" Column="21" TopLine="4"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

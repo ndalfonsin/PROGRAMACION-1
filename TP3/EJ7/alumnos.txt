@@ -1,0 +1,6 @@
+Ana Garcia      8 9 7
+Diego Lopez     5 6 8
+Sofia Hernandez 9 7 10
+Luis Rodriguez  6 7 6
+Marta Perez     8 8 9
+***
