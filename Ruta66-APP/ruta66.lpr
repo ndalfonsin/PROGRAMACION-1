@@ -12,12 +12,8 @@ program ruta66;
     b- patente del vehiculo que mas viajes realizo
     c- total de litros consumidos por el auto que hizo la menor cantidad de kms
 
-
-    Parto de una hipotesis de tener unicamente 6 autos en alquiler, que las patentes
-    tienen el formato de 6 digitos alfanumericos, Por ultimo se utilizara un archivo
-    de tipo texto como un simulador de almacenado de datos cargados, para mantener un
-    registro tras la utilizacion diaria del programa.
  *)
+
 uses
     Sysutils;
 
@@ -25,15 +21,15 @@ type
     st6=string[6];
 
     //Asignaciones de los arrays, de tipo real y string de 6
-    VStr = array[1..3] of st6;
-    VRl = array[1..3] of real;
+    VStr = array[1..50] of st6;
+    VRl = array[1..50] of real;
 
 
 
 var
     patente: VStr;
     Litros, Km: VRl;
-    Op: byte;
+    Op, N, posMin, posMax: byte;
 
 
 //Menu de opciones del programa
@@ -62,13 +58,15 @@ procedure Menu (var Op : byte);
 
 
 // 1---> Ingreso de datos a 3 vectores que se trabajaran en paralelo para un correcto manejo de los datos
-procedure ingresoDatos (var patente:VStr; var Litros:VRl; var Km:VRl);
+procedure ingresoDatos (var patente:VStr; var Litros, Km:VRl; var N:byte);
    var
       i:byte;
 
       begin
-           Writeln(Upcase('El ingreso de datos se realizara de a uno por campo'));
-           for i:=1 to 3 do
+           writeln;
+           Write('INGRESAR CANTIDAD DE AUTOS A REGISTRAR: '); Readln(N);
+           writeln;
+           for i:=1 to N do
                begin
                     Writeln('Ingrese la patente');
                     readln(patente[i]);
@@ -84,7 +82,7 @@ procedure ingresoDatos (var patente:VStr; var Litros:VRl; var Km:VRl);
 (* 2---> Guardado de los datos que contienen las matrices, de manera paralela, en un archivo
  txt, que funcione a modo de base de datos.
  Queda a incluir un procedimiento de extraccion de informacion de la 'base de datos' *)
-procedure guardadoEnTxt (patente:VStr; Litros:VRl; Km:VRl);
+procedure guardadoEnTxt (patente:VStr; Litros, Km:VRl; N:byte);
 
    var
       Arch:text;
@@ -97,7 +95,7 @@ procedure guardadoEnTxt (patente:VStr; Litros:VRl; Km:VRl);
         //Preparo el archivo para escritura
         rewrite(Arch);
 
-        for  i:=1 to 3 do
+        for  i:=1 to N do
             begin
                  (* Ya que los valores de los vectores litros y km son de tipo real, para el
                  correcto cargado y la utilizacion de la variable 'cadena', utilizo la funcion
@@ -112,7 +110,7 @@ procedure guardadoEnTxt (patente:VStr; Litros:VRl; Km:VRl);
    end;
 
 //3---> Procedimiento para mostrar el informe de consumo de combustible por km
-procedure KmL (patente:VStr; Litros:VRl; Km:VRl);
+procedure KmL (patente:VStr; Litros, Km:VRl; N:byte);
    var
       i: byte;
       consumoKM: real;
@@ -122,7 +120,7 @@ procedure KmL (patente:VStr; Litros:VRl; Km:VRl);
       writeln('|_________________________________________|');
       writeln(' ');
 
-      for i:=1 to 3 do
+      for i:=1 to N do
           begin
                consumoKM:= (Litros[i]/Km[i]);
 
@@ -134,43 +132,48 @@ procedure KmL (patente:VStr; Litros:VRl; Km:VRl);
    end;
 
 //4----> Funcion para determinar la pantente del auto que mas km recorrio
-Function patenteM(patente:VStr; Km:VRl):string;
+Function patenteM(patente:VStr; Km:VRl; N:byte):byte;
       var
-         i:byte;
+         i, maxPos:byte;
          maxKm: real;
+
 
       begin
          maxKm:=0.0;
-         patenteM:='';
 
-         for i:=1 to 3 do
+         for i:=1 to N do
              begin
                   if Km[i] > maxKm then
                      begin
-                          patenteM:= patente[i];
+                          maxPos:= i;
                           maxKm:= Km[i];
                      end;
              end;
+
+         patenteM:=maxPos;
+
       end;
 
 
 //5---> Funcion para determinar el consumo en litros del auto que menos km recorrio
-Function ConsumoMe(Litros:VRl; Km:VRl):real;
+Function consumoMe(Litros, Km:VRl; N:byte):byte;
       var
-         i:byte;
+         i, minPos:byte;
          minKm: real;
 
       begin
          minKm:=9999.99;
 
-         for i:=1 to 3 do
+         for i:=1 to N do
              begin
                   if Km[i] < minKm then
                      begin
-                          ConsumoMe:= Litros[i];
+                          minPos:= i;
                           minKm:= Km[i];
                      end;
              end;
+
+         consumoMe:=minPos;
       end;
 begin
      Op := 1;
@@ -180,22 +183,27 @@ begin
                 Menu(Op);
 
                 case Op of
-                     1: ingresoDatos(patente, Litros, Km);
-                     2: guardadoEnTxt (patente, Litros, Km);
-                     3: KmL (patente, Litros, Km);
+                     1: ingresoDatos(patente, Litros, Km, N);
+                     2: guardadoEnTxt (patente, Litros, Km, N);
+                     3: KmL (patente, Litros, Km, N);
                      4: begin
+                             posMax := patenteM(patente, Km, N);
+
                              writeln('');
                              writeln('-------------------------------------------------------------');
-                             writeln('El auto con mayor cantidad de viajes es: ',patenteM(patente, Km));
+                             writeln('El auto con mayor cantidad de viajes es: ',patente[posMax]);
                              writeln('-------------------------------------------------------------');
                         end;
                      5: begin
+                             posMin := consumoMe(Litros, Km, N);
+
                              writeln('');
                              writeln('-------------------------------------------------------------');
-                             writeln('El consumo en litros del menor recorrido es: ',ConsumoMe(Litros, Km):3:2);
+                             writeln('El consumo en litros del menor recorrido es: ',Litros[posMin]:3:2);
                              writeln('-------------------------------------------------------------');
                         end;
                 end;
            end;
 
 end.
+

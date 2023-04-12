@@ -9,12 +9,13 @@
         <Filename Value="ruta66.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos Y="31"/>
-        <UsageCount Value="23"/>
+        <TopLine Value="154"/>
+        <CursorPos X="48" Y="157"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="19">
+    <JumpHistory HistoryIndex="23">
       <Position>
         <Filename Value="ruta66.lpr"/>
         <Caret Line="109" Column="61" TopLine="75"/>
@@ -85,15 +86,31 @@
       </Position>
       <Position>
         <Filename Value="ruta66.lpr"/>
-        <Caret Line="29" Column="31" TopLine="146"/>
-      </Position>
-      <Position>
-        <Filename Value="ruta66.lpr"/>
         <Caret Line="88" Column="7" TopLine="41"/>
       </Position>
       <Position>
         <Filename Value="ruta66.lpr"/>
         <Caret Line="25" Column="66"/>
+      </Position>
+      <Position>
+        <Filename Value="ruta66.lpr"/>
+        <Caret Line="196" Column="107" TopLine="149"/>
+      </Position>
+      <Position>
+        <Filename Value="ruta66.lpr"/>
+        <Caret Line="97" Column="41" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="ruta66.lpr"/>
+        <Caret Line="101" Column="88" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="ruta66.lpr"/>
+        <Caret Line="188" Column="56" TopLine="154"/>
+      </Position>
+      <Position>
+        <Filename Value="ruta66.lpr"/>
+        <Caret Line="192" Column="98" TopLine="154"/>
       </Position>
     </JumpHistory>
     <RunParams>
