@@ -8,10 +8,17 @@
       <Unit>
         <Filename Value="ruta66.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="156"/>
         <CursorPos Y="209"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\programacion comparativa\EJ1.lpr"/>
+        <UnitName Value="ej1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
