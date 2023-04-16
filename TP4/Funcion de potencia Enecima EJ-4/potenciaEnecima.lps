@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="37" Y="45"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="5">
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="46" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="14" Column="25"/>
+      </Position>
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="32" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="21" Column="12"/>
+      </Position>
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="26" Column="20"/>
+      </Position>
+      <Position>
+        <Filename Value="potenciaEnecima.lpr"/>
+        <Caret Line="32" Column="18"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
