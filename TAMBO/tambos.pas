@@ -96,4 +96,5 @@ begin
         writeln(COD[s]);
     
     readln;
+    
 end.
