@@ -7,7 +7,7 @@ datos:
 
 A |- -codigo de tambo (cadena de 4 caracteres)
    |- -la entrega diaria en litros
-    
+
 se pide armar 3 vectores paralelos, COD TOT PROM y ademas calcular e informar:
 B   -codigo del tambo que mas leche entrego a la compañia.
 C   -cuantos superaron un promedio de X litros de entrega
@@ -19,7 +19,7 @@ const
 
 type
     Str4 = string[4];
-    
+
     Vstr = Array[1..Amax] of Str4;
     Vrl = Array[1..Amax] of real;
     Vbt = Array[1..Amax] of byte;
@@ -58,21 +58,21 @@ procedure Menu (var Op : byte);
 //-----A
 
 function busqueda(N:byte; COD:Vstr; codigo:Str4):byte;
-    var 
+    var
         i:byte;
-    
+
     begin
         i:=1;
 
         while (i <= N) and (COD[i] <> codigo) do
             i:= i + 1;
 
-        
+
         if N<=i then
             busqueda:=0
         else
-            busqueda:=i;     
-    
+            busqueda:=i;
+
     end;
 
 //Carga de datos en los vectores correspondientes
@@ -83,14 +83,14 @@ procedure CargaDatos(var COD:Vstr; var TOT:Vrl; var ENTREGAS:Vbt; var N:byte);
         dias, y: byte;
         litros: real;
 
-    
+
     begin
         Assign(Arch, 'Rtamb.txt');
         reset(Arch);
 
         N:=1;
 
-        while not eof(Arch) do 
+        while not eof(Arch) do
             begin
                 readln(Arch, codigo, dias, litros);
                 y:=busqueda(N, COD, codigo);
@@ -100,15 +100,15 @@ procedure CargaDatos(var COD:Vstr; var TOT:Vrl; var ENTREGAS:Vbt; var N:byte);
                         N:= N+1;
                         COD[N]:= codigo;
                         ENTREGAS[N] := 1;
-                        TOT[N] := litros;   
+                        TOT[N] := litros;
                     end
-                else    
+                else
                     begin
-                        
+
                         ENTREGAS[y]:=ENTREGAS[y]+1;
-                        TOT[y]:= TOT[y] + litros; 
+                        TOT[y]:= TOT[y] + litros;
                     end;
-                
+
             end;
         close(Arch);
     end;
@@ -116,7 +116,7 @@ procedure CargaDatos(var COD:Vstr; var TOT:Vrl; var ENTREGAS:Vbt; var N:byte);
 //-----B
 
 function maxBusqueda (N:byte; TOT:Vrl):byte;// Indice del codigo con mayor cantidad de entregas en litros
-    var 
+    var
         maxTot:real;
         i:byte;
 
@@ -135,7 +135,7 @@ function maxBusqueda (N:byte; TOT:Vrl):byte;// Indice del codigo con mayor canti
 
 // Calculo de promedio de Litros vendidos sobre la cantidad de entregas
 function promedio(N:byte; x:real; TOT:Vrl; ENTREGAS:Vbt):byte;
-    var 
+    var
         acumP, i:byte;
         prom:real;
     begin
@@ -145,24 +145,24 @@ function promedio(N:byte; x:real; TOT:Vrl; ENTREGAS:Vbt):byte;
                 prom:= (TOT[i]/ENTREGAS[i]);
 
                 if prom >= x then
-                    acumP:= acumP + 1; 
-            end;           
+                    acumP:= acumP + 1;
+            end;
         promedio:=acumP;
     end;
 
 //-----D
 //Busqueda de datos a partir de un codigo
 procedure datCod(N:byte; COD:Vstr; TOT:Vrl; ENTREGAS:Vbt; codigo:Str4);
-    var 
+    var
         i:byte;
-        prom:real; 
+        prom:real;
     begin
         i:= busqueda(N, COD, codigo);
         prom:= (TOT[i]/ENTREGAS[i]);
         writeln('Codigo: ',COD[i]);
         writeln('Ventas en L: ', TOT[i]);
         writeln('El promedio de ventas es: ', prom:4:2);
-        writeln;    
+        writeln;
     end;
 
 begin
@@ -170,14 +170,14 @@ begin
     CargaDatos(COD, TOT, ENTREGAS, N);
     Mb:= maxBusqueda(N, TOT);
     OP:=1;
-    
+
     writeln(maxBusqueda(N,TOT));
     writeln(N);
 
     for i:=1 to N do
         writeln(COD[i],' ', TOT[i]:4:2,' ', ENTREGAS[i]);
 
-    
+
 
     While Op<>0 do
         begin
@@ -204,5 +204,5 @@ begin
             end;
         end;
     readln;
-    
+
 end.
