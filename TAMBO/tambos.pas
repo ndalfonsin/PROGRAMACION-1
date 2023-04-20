@@ -25,7 +25,7 @@ type
     Vbt = Array[1..Amax] of byte;
 
 var
-    N, s, Op, Mb, i: byte;
+    N, s, Op, Mb, i, busca: byte;
     COD: Vstr;
     TOT: Vrl;
     ENTREGAS: Vbt;
@@ -68,10 +68,10 @@ function busqueda(N:byte; COD:Vstr; codigo:Str4):byte;
             i:= i + 1;
 
         
-        if N<=i then
-            busqueda:=0
+        if i <= N then
+            busqueda:=i
         else
-            busqueda:=i;     
+            busqueda:=0;     
     
     end;
 
@@ -88,7 +88,7 @@ procedure CargaDatos(var COD:Vstr; var TOT:Vrl; var ENTREGAS:Vbt; var N:byte);
         Assign(Arch, 'Rtamb.txt');
         reset(Arch);
 
-        N:=1;
+        N:=0;
 
         while not eof(Arch) do 
             begin
@@ -121,7 +121,7 @@ function maxBusqueda (N:byte; TOT:Vrl):byte;// Indice del codigo con mayor canti
         i:byte;
 
     begin
-        maxTot:=0;
+        maxTot:=-9999;
 
         for i:=1 to N do
             begin
@@ -160,7 +160,7 @@ procedure datCod(N:byte; COD:Vstr; TOT:Vrl; ENTREGAS:Vbt; codigo:Str4);
         i:= busqueda(N, COD, codigo);
         prom:= (TOT[i]/ENTREGAS[i]);
         writeln('Codigo: ',COD[i]);
-        writeln('Ventas en L: ', TOT[i]);
+        writeln('Ventas en L: ', TOT[i]:8:2);
         writeln('El promedio de ventas es: ', prom:4:2);
         writeln;    
     end;
@@ -193,16 +193,18 @@ begin
                         writeln('Un total de ',promedio(N, x, TOT, ENTREGAS),' superan el promedio de entregas' );
                     end;
                 3:  begin
-                        repeat
-                            writeln('Ingrese el codigo que desea buscar');read(codigo);
-                            if busqueda(N, COD, codigo)=0 then
-                                writeln('Ha ingresado un codigo incorrecto, no existe ningun tambo con el codigo ',codigo);
-                        until (busqueda(N, COD, codigo)=0);
+                        writeln('Ingrese el codigo que desea buscar');read(codigo);
+                        codigo:= Upcase(codigo);
+                        busca:=busqueda(N, COD, codigo);
+                        if busca=0 then
+                            writeln('Ha ingresado un codigo incorrecto, no existe ningun tambo con el codigo ',codigo)
+                        else
+                            datCod(N, COD, TOT, ENTREGAS, codigo);
 
-                        datCod(N, COD, TOT, ENTREGAS, codigo);
+                        
                     end;
             end;
         end;
-    readln;
+readln;
     
 end.
