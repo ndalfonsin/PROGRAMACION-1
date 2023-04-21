@@ -1,0 +1,4 @@
+B 2 el sabado ire a la playa.
+C 1 llevaremos vino para el almuerzo.
+B 1 todos creyeron en su palabra.
+A 2 piensa venir en primavera. 
