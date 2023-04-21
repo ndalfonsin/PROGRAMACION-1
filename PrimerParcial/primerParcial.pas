@@ -32,25 +32,14 @@ type
   Vbt = array[1..maxA] of byte;
   Vrl = array[1..maxA] of real;
 
-var
-  COD: Vstr;
-  DNI: Vstr8;
-  EDAD, LUGAR: Vbt;
-  PESO: Vrl;
-  N, i, CantLug: byte;
-  codigo:Str4;
-  p1, p2: real;
 
 //se me desborda el buffer e intente solucionarlo pero no hay caso, procedo a carga manual
-(*
-procedure CargaDatos(var N: byte; var COD: Vstr; var DNI: Vstr8; var EDAD: Vbt; var PESO: Vrl; var CantLug: byte);
+
+procedure CargaDatos(var N,CantLug: byte; var COD: Vstr; var DNI: Vstr8; var EDAD: Vbt; var PESO: Vrl);
 var
   Arch: text;
-  i, ed: byte;
-  codigo, doc: string;
-  kg: real;
+  Aux:char;
 begin
-  i := 0;
   N := 0;
 
   Assign(Arch, 'CHECKIN.txt');
@@ -60,68 +49,19 @@ begin
 
   while not EOF(Arch)do
   begin
-    i := i + 1;
-    readln(Arch, codigo, doc, ed, kg);
-
-    COD[i] := codigo;
-    DNI[i] := doc;
-    EDAD[i] := ed;
-    PESO[i] := kg;
+    N := N + 1;
+    readln(Arch, COD[N], Aux , DNI[N] , PESO[N] );
   end;
 
   Close(Arch);
-  N := i;
-
-  for i := 1 to N do
-    writeln(COD[i], ' ', DNI[i], ' ', EDAD[i], ' ', PESO[i]:0:2, ' ', CantLug);
 end;
 
-*)
-
-procedure cargaManual(var N: byte; var COD: Vstr; var DNI: Vstr8; var EDAD: Vbt; var PESO: Vrl; var CantLug: byte);
-    begin
-        COD[1] := 'A001';
-        COD[2] := 'A001';
-        COD[3] := 'A001';
-        COD[4] := 'B001';
-        COD[5] := 'B001';
-        COD[6] := 'C001';
-        COD[7] := 'D001';
-        COD[8] := 'D001';
-        DNI[1] := '50101001';
-        DNI[2] := '50101002';
-        DNI[3] := '50101003';
-        DNI[4] := '50101004';
-        DNI[5] := '50101005';
-        DNI[6] := '50101006';
-        DNI[7] := '50101007';
-        DNI[8] := '50101008';
-        EDAD[1] := 21;
-        EDAD[2] := 22;
-        EDAD[3] := 23;
-        EDAD[4] := 24;
-        EDAD[5] := 25;
-        EDAD[6] := 26;
-        EDAD[7] := 27;
-        EDAD[8] := 28;
-        PESO[1] := 5;
-        PESO[2] := 0;
-        PESO[3] := 5;
-        PESO[4] := 15;
-        PESO[5] := 1;
-        PESO[6] := 7;
-        PESO[7] := 10;
-        PESO[8] := 11;
-        N := 8;
-        CantLug:= 20;
-    end;
-
-procedure AsignacionLugar(COD: Vstr; DNI: Vstr8; CantLug: byte; N: byte; var LUGAR:Vbt);
+procedure AsignacionLugar(COD: Vstr; DNI: Vstr8; CantLug, N: byte; var LUGAR:Vbt);
     var
         i, contas, contdes:byte;
         codAnt:Str4;
     begin
-        codAnt:='A001';
+        codAnt:=COD[1];
         contas:=0;
         contdes:=CantLug;
 
@@ -209,9 +149,19 @@ procedure Pesos(p1, p2: real; PESO:Vrl; EDAD:Vbt; N:byte);
         writeln('El promedio de edades entre los pesos ',p1:2:2,' y ',p2:2:2,' es: ', prom:2:2);
     end;
 
-    
+
+var
+  COD: Vstr;
+  DNI: Vstr8;
+  EDAD, LUGAR: Vbt;
+  PESO: Vrl;
+  N, i, CantLug: byte;
+  codigo:Str4;
+  p1, p2: real;
+
+
 begin
-    cargaManual(N, COD, DNI, EDAD, PESO, CantLug);
+    CargaDatos(N, COD, DNI, EDAD, PESO, CantLug);
     AsignacionLugar(COD, DNI, CantLug, N, LUGAR);
     
     writeln('Ingrese el codigo que desea buscar para obtener su lugar: ');
