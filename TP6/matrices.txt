@@ -1,0 +1,194 @@
+1- Declaracion del tipo:
+
+type
+                      FILA COLUMNA
+    TipoMatiz = Array[1..3, 1..4] of integer;
+
+var
+    mat: TipoMatiz;
+
+        COLUMNAS
+    | 11 | 12 | 13 | 14 |
+    | 21 | 22 | 23 | 24 | FILAS
+    | 31 | 32 | 33 | 34 |
+
+2 - Tipos de lectura, escritura y operaciones con Matrices
+
+
+A- Lectura por filas, por columnas, desordenada.
+
+    
+    Procedure LeeMatriz(var Mat: TipoMatiz; var N,M: byte);
+        var 
+            i, j: byte;
+        begin
+            Write('Ingrese la cantidad de filas: ');Readln(N);
+            Write('Ingrese la cantidad de columnas: ');Readln(M);
+
+            //lee todas las columnas, de manera ascendente, aumentando y completando las filas
+            for i:=1 to N do 
+                for j:=1 to M do 
+                    begin
+                        Write('fila,columna ', i:3, j:3);Readln(Mat[i,j]);
+                    end;
+        end;
+
+    
+    los elementos se deben ingresar en el orden en que se generan los indices, en caso contrario, cambiar el orden de los ciclos.
+
+    
+    Procedure LeeMatrizxCol(Var Mat: TipoMatriz; Var N, M :byte); 
+        Var   
+            i, j: byte; 
+        Begin 
+            Write (‘Ingrese cantidad de filas’); Readln(N); 
+            Write (‘Ingrese cantidad de caolumnas’); Readln(M); 
+            
+            For j:= 1 to M do 
+                For i:= 1 to N do  
+                    Begin 
+                        Write(‘fila, columna ’, I:3, j:3);  
+                        Readln(Mat[i, j]); 
+                    end  
+        end;
+    
+    
+    Otra posibilidad es la lectura parcial o total de los elementos de la matriz, desordenados. Para cada uno se ingresa fila, columna y valor.
+    Como no todos ingresan se debe iniciar la matriz en cero. 
+
+    
+    Procedure IniciaMatriz (Var Mat:TipoMatriz; N,M:byte);
+    Var  
+        i, j: byte; 
+        
+    begin 
+        For j:= 1 to M do 
+            For i:= 1 to N do 
+                Mat[i, j]:=0; 
+    End; 
+
+    
+    Nota:  una matriz iniciada en cero, puede utilizarse como un conjunto de contadores o acumuladores (índice con significado)
+
+    
+    Procedure LeeMatrizDesordenados (Var Mat: TipoMatriz); 
+        Var   
+            i, j: byte; 
+        begin 
+            write(‘Ingrese fila,0= fin de ingreso’); Readln(i); 
+            While i <> 0 do      
+                Begin      
+                    Readln(j);      
+                    Readln(Mat[i,j]);      
+                    write(‘Ingrese fila,0= fin de ingreso’); Readln(i);      
+                End; 
+        End;  
+
+
+B-Escritura en formato Matricial
+
+    Procedure EscribeMatriz (Mat: TipoMatriz; N,M : Byte);   {en forma matricial} 
+        Var   
+            i, j: byte; 
+        Begin 
+            For i:= 1 to N do 
+                Begin  
+                    For J:= 1 to M do  
+                    Write(Mat[i, j]: 4); 
+                    Writeln; 
+                end 
+        end;
+
+
+c- Calcular el elemento minimo de una matriz
+
+    Function Minimo(Mat: TipoMatriz; N,M: byte): integer; 
+        Var 
+            i,j: byte;    
+            Min: integer; 
+        Begin  
+            Min:= Mat[1,1];  
+            For i := 1 to N do        
+                For j:= 1 to M do            
+                    If Min > Mat[i,j] Then            
+                        Min:= Mat[I,j];  
+            Minimo:= Min; 
+        End; 
+
+
+D- Calcular el minimo elemento de una fila
+
+    Function MinFila(Mat:TipoMatriz; i, M:Byte):integer; {recorre la fila i con j entre 1 y M} 
+        Var     
+            j:Byte;       
+            Min: integer; 
+        Begin    
+            Min:= Mat[i,1];   
+            For j:= 2 to M do      
+                If Min > Mat[i,j] then        
+                    Min:=Mat[i,j]; 
+            MinFila:= Min 
+        End;
+
+
+E-Utilizando la función generar un arreglo VMin de N elementos, que contenga el mínimo de cada fila. 
+
+    Procedure VectorMinimos (Mat: TipoMatriz; N,M: byte; Var Vmin: TV);
+        Var  
+            i:byte; 
+        begin 
+            For i := 1 to N do  
+                VMin[i] := MinFila(Mat, i , M);  
+        End;
+
+
+F- A partir de la matriz y de un vector de M elementos reales,  calcular cuantas filas coinciden con el vector.
+
+    Function CuantosCoinciden (Mat: TipoMatriz; N,M: byte; Vec: TV); 
+    Var  
+        Cont, i, j :byte;
+     
+    begin 
+        Cont:=0; 
+        For i := 1 to N do  
+            Begin 
+                j:= 1 ;   
+                while (j<M) and  (Vec[j] = Mat[ i , j]) do
+                    j:= j + 1;   
+                    If Vec[j] = Mat[ i , j] then 
+                        Cont:= Cont + 1;  
+                End, 
+                CuantosCoinciden:= Cont;  
+            End;   
+
+
+ diagonal principal formada por los elementos A[i , i] con i = 1..N 
+ diagonal secundaria formada por los elementos A[i , N – i +1] con i = 1..N 
+ triangular inferior    los elementos A[i , j] = 0,  con i = 2..N  y  j < i
+
+A- Calcular la suma de la diagonal principal (traza)
+
+    Function SumaDiagonal (A: TM; N: byte):real;
+        Var  
+            i :byte;
+            Sum:real; 
+        Begin 
+            Sum:= 0; 
+            For i := 1 to N do    
+                Sum:=Sum + A[i, i]; 
+            SumaDiagonal:= Sum; 
+        End;
+
+B- Contar la cantidad de elementos negativos debajo de la diagonal 
+
+    Function CuentaNegativos (A: TM; N: byte):real;
+        Var  
+            Cont, i :byte; 
+        Begin 
+            Cont:= 0; 
+            For i := 2 to N do    
+                For j := 1 to i – 1 do   
+                    If A[i, j] < 0 then 
+                        Cont:=Cont + 1; 
+            CuentaNegativos:= Cont; 
+        End;
