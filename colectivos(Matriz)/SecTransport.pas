@@ -20,12 +20,14 @@ Los ítems anteriores se refieren al movimiento de todo el día.
 
 Type 
     TM = Array[1..4,1..25] of byte;
+    TV = Array[1..4] of byte;
 
 Const
     Columnas =4;
 
 var 
     pasajeros : TM;
+    mDes : TV;
     N, M, i, j, Filas: byte;
 
 Procedure cargaDatos(var pasajeros : TM; var N, M, Filas : byte);
@@ -50,6 +52,7 @@ Procedure cargaDatos(var pasajeros : TM; var N, M, Filas : byte);
                         
                         readln(arch, pasajeros[i,j]);
 
+                        {
                         if (j=1)and(pasajeros[i,j]<>ParadAnt) then
                             begin
                                 ParadAnt:=pasajeros[i,j];
@@ -60,10 +63,35 @@ Procedure cargaDatos(var pasajeros : TM; var N, M, Filas : byte);
                                 LineaAnt:=pasajeros[i,j];
                                 M := M + 1;
                             end;
+                        }
                     end;
             end;
         
-        Filas:=i;     
+        Filas:=i; 
+    end;
+
+procedure mayoresDesc(pasajeros : TM; var mDes : TV; Filas : byte);
+    var
+        descensos, ant, i, k, cp : byte;
+    begin
+        descensos := 0;
+
+        for i:=1 to 4 do 
+            mDes[i]:=0;
+
+        for i:=1 to Filas do
+            begin
+                descensos:= pasajeros[i, Columnas];
+                k:= pasajeros[i, 1];
+                ant:= mDes[k]
+                mDes[k]:= ant + descensos;
+            end;
+
+        for i:=1 to 4 do
+            writeln(mDes[i]);
+
+        writeln;
+    
     end;
 
 Function masDesc(pasajeros : TM; Filas : byte):byte;
@@ -75,10 +103,11 @@ Function masDesc(pasajeros : TM; Filas : byte):byte;
 
         for i:=1 to Filas do
             begin
-                if maxD < pasajeros[i,Columnas]
+                if maxD < pasajeros[i,Columnas] then
                     begin
+
                         maxD := pasajeros[i,Columnas];
-                        Result := i;
+                        Result := (i-1);
                     end;
                     
             end;
@@ -88,20 +117,58 @@ Function masDesc(pasajeros : TM; Filas : byte):byte;
 
 
 
+{
+procedure vectorminAsc(pasajeros : TM; );
 begin
-    cargaDatos(pasajeros, N, M, Filas);
+    
+end;
+}
 
-    write('La parada con mayor descensos es: ');
-    write(pasajeros[1,masDesc(pasajeros, Filas)]);
-    writeln;
-    {
+
+Function minAsc(pasajeros : TM; Filas : byte):byte;
+    var
+        i, minA, Result : byte;
+
+    begin
+        minA:=255;
+
+        for i:=1 to Filas do
+            begin
+                if minA > pasajeros[i,Columnas] then
+                    begin
+
+                        minA := pasajeros[i,Columnas];
+                        Result := (i-1);
+                    end;
+                    
+            end;
+
+        minAsc:=Result;
+    end;
+
+begin
+    
+    cargaDatos(pasajeros, N, M, Filas);
+    //write('La parada con mayor descensos es: ');
+    //write(pasajeros[masDesc(pasajeros, Filas),1]);
+    //iteln;
+    //write('La linea con menor Ascensos es: ');
+    //write(pasajeros[masDesc(pasajeros, Filas),1]);
+    //riteln;
+
+    mayoresDesc(pasajeros, mDes, Filas);
+
+    
+    
     for i:=1 to Filas do
         begin
             for j:=1 to Columnas do
                 write(pasajeros[i,j], ' ');
             writeln();
         end;
-    }
+    
+
+
 
     readln;
 end.
