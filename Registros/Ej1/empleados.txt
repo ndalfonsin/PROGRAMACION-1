@@ -1,0 +1,58 @@
+Juan Perez
+01 05 1980
+Maria Gonzalez
+15 12 1992
+Pedro Sanchez
+10 08 1985
+Luisa Rodriguez
+25 03 1978
+Carlos Lopez
+12 11 1990
+Ana Martinez
+08 07 1987
+Roberto Ramirez
+19 09 1982
+Laura Hernandez
+04 02 1995
+Sergio Gomez
+21 06 1989
+Isabel Torres
+14 10 1984
+Ricardo Castro
+27 12 1975
+Mariana Herrera
+03 04 1991
+Javier Morales
+18 08 1986
+Natalia Jimenez
+06 11 1983
+Oscar Vargas
+23 01 1997
+Gabriela Medina
+10 07 1988
+Diego Paredes
+28 09 1981
+Valeria Rios
+11 03 1993
+Fernando Ortega
+16 05 1979
+Andrea Silva
+02 08 1996
+Gustavo Mendoza
+17 12 1980
+Camila Castro
+07 06 1987
+Daniel Alvarez
+24 10 1984
+Sofia Soto
+09 02 1992
+Raul Delgado
+22 07 1989
+Carolina Vega
+05 11 1986
+Hector Marquez
+20 01 1995
+Paulina Nuñez
+13 04 1983
+Jorge Miranda
+29 08 1980

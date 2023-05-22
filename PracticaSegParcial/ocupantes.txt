@@ -1,0 +1,12 @@
+3
+3 2 Martinez   PRE 2 S
+2 1 Molina     STD 1 N
+1 5 Romero     PRE 3 S 
+3 1 Paredes    ECO 3 N 
+3 4 Gonzalez   ECO 1 N 
+3 6 Alvarez    STD 1 S 
+1 3 Messi      STD 4 S 
+1 2 Di Maria   PRE 3 S 
+1 4 Lo Celso   PRE 5 N 
+2 6 Tagliafico PRE 3 S 
+1 6 Correa     ECO 2 N
