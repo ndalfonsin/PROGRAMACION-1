@@ -1,0 +1,48 @@
+Errores de ejecución en Free Pascal 
+1. Número de función inválida. Se intentó una llamada no válida al sistema operativo
+2. Archivo no encontrado. Se trató de borrar, renombrar o abrir un archivo que no existe.
+3. Camino no encontrado.
+4. Demasiados archivos abiertos. Su proceso alcanzó el máximo de archivos abiertos permitidos.
+5. Denegado el acceso al archivo. Puede ser causado por:
+- Tratar de abrir para escritura un archivo que es sólo de lectura
+- El archivo está actualmente bloqueado o está siendo usado en otro proceso.
+- Tratar de crear un archivo o directorio con el mismo nombre de uno que ya existe.
+- Tratar de leer desde un archivo que fue abierto en el modo de sólo lectura
+- Tratar de escribir en un archivo  que fue abierto como de sólo escritura.
+- Tratar de eliminar un archivo o directorio cuando no es posible.
+- No existe permiso para acceder al archivo o directorio.
+6. Manejo inválido de archivo. Si esto ocurre, la variable archivo que está usando será eliminada; indica que la memoria está corrupta. 
+12. Acceso no válido al archivo. Es reportado cuando un reset o rewrite es llamado un valor no válido de FileMode
+15. Número de drive no válido
+16. No se puede eliminar el directorio actual. Es reportado cuando se trata de eliminar el directorio que está activo.
+17. No se puede renombrar el archivo.
+100. Error en la lectura desde el disco. Sucede cuando se trata de leer pasado el final del archivo
+101. Error en la escritura en el disco. Es reportado cuando el disco está lleno y se está intentando escribir en él.
+102. El archivo no fue asignado. Es reportado al invocar Reset, Rewrite, Append, Rename y Erase, con un archivo no asignado.
+103. Archivo no abierto. Es reportado por las siguientes funciones: Close, Read, Write, Seek, EOf, FilePos, FileSize, Flush, BlockRead, and BlockWrite
+104. Archivo no abierto para entrada, no fue abierto con Reset. Es reportado por: Read, BlockRead, Eof, Eoln, SeekEof or SeekEoln
+105. Archivo no abierto para salida, no fue abierto con Rewite.
+106. Formato numérico no válido. Es reportado cuando se lee, desde un archivo de texto, un valor no numérico y se espera un valor numérico.
+150. El disco está protegido para escritura (Error crítico)
+151. Tamaño erróneo en la estructura de petición al dispositivo 
+152. El dispositivo no está listo. (Error crítico)
+154. Error de CRC en los datos (Error crítico)
+156. Error de búsqueda en el disco (Error crítico)
+157.  Tipo de medio desconocido (Error crítico)
+159. Sector no encontrado (Error crítico)
+159. Impresora sin papel (Error crítico)
+160. Fallo de escritura en dispositivo (Error crítico)
+161. Fallo de lectura en dispositivo (Error crítico)
+162. Fallo en el hardware (Error crítico)
+200. División por cero
+201. Error en la comprobación de rango. Si se compiló el programa con controlador de rango, este error se produce en los siguientes casos:
+	1. Se accedió a un arreglo con un índice que está fuera del rango declarado para el arreglo
+	2. Se intentó asignar un valor a una variable fuera de su rango (por ejemplo en un tipo enumerado)
+202. Error de desbordamiento de pila. Este error se produce sólo si el controlador de pila está habilitado.
+204. Operación de puntero no válida.
+205. Desbordamiento de punto flotante. Está tratando de usar o producir números reales demasiado grandes.
+206.  Subdesbordamiento de punto flotante. Está tratando de usar o producir números reales demasiado pequeños.
+207. Operación de punto flotante no válida. Puede ocurrir al intentar calcular la raíz cuadrada o el logaritmo de un número negativo.
+215. Error de desbordamiento aritmético. Se reporta cuando el resultado de una operación aritmética está fuera del rango soportado. Contrariamente a Turbo Pascal, este error es reportado sólo para desbordamientos aritméticos de 32-bit y 64-bit.
+216. Falla de protección general. La aplicación trató de acceder a un espacio de memoria no válido.
+217. Error de excepción no controlado. Una excepción ocurrió y no hay un controlador presente. La unidad SysUtil instala uno por defecto que captura todas las excepciones.

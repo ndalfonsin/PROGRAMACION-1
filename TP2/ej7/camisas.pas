@@ -103,6 +103,7 @@ begin
         total:= total + compra;
 
         write('Desea seguir ingresando productos? [S]si [N]no: ');readln(res);
+        
     until (upcase(res) = 'N');
 
     writeln('Total de la compra: ', total:4:2);
