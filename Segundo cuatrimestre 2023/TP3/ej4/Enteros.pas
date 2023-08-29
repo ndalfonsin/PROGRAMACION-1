@@ -1,0 +1,32 @@
+Program enteros;
+
+{ Ingresar N numeros enteros (ordenados en forma descendente), informar cual es la maxima
+diferencia entre dos numeros consecutivos y que posicion ocupa.}
+
+var
+	arch: text;
+	numAnt, i, num, dif, N, pos: byte;
+
+begin
+	dif:=0;
+	writeln('Ingrese la cantidad de numeros a ingresar: ');readln(N);
+	
+	for i:=1 to N do
+		begin
+			write('Ingrese el ',i,' numero: ');readln(num);
+			
+			if i <> 1 then
+				begin
+					if ((numAnt-num)>dif) then
+						begin						
+							dif:= numAnt-num;
+							pos:= i;
+						end;		
+				end;
+			numAnt:= num;			
+		end;
+
+	writeln('La mayor diferencia es de: ',dif);
+	writeln('Se encuentran en la posicion ',(pos-1),' y ',pos);
+end.
+	
