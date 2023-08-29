@@ -1,0 +1,36 @@
+Program Ej5; 
+(*
+	Dado un terreno de 10 X 30 se quiere embaldosar una sup de N x M. 
+
+	Calcular: 
+		-Que superficie representa del total del terreno
+		-Si cada baldosa mide 0.25 X 0.25 ¿Cuantas se deben comprar?
+*)
+Var
+	N, M, areaS, porc: real;
+	cantB: byte;
+Const
+	areaBald = 0.0625;
+	areaTerr = 300;
+Begin
+	writeln('Dimensiones del terreno 10 X 30');
+	writeln('Ingrese el area a recubrir N x M');
+
+	repeat	
+		writeln('Ingrese N<=10');
+		readln(N);
+	until N<=10;
+
+	repeat
+		writeln('Ingrese M<=30');
+		readln(M);
+	until M<=30;
+
+	areaS := N*M;
+	porc := (areaS*100)/areaTerr;
+	
+	writeln('La superficie a embaldosar es el ',porc:4:2,'% del area total del terreno');
+	cantB := ceil(areaS/areaBald); //Usar trunc y fact (si fact es >0 entonces sumo 1 a trunc)
+ 	writeln('Se necesitaran ',cantB,' baldosas');
+	readln();
+End.
