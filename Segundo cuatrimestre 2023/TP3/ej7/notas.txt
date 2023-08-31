@@ -1,0 +1,9 @@
+Maria
+10 9 10
+Marcos
+9 10 8
+Nico
+4 10 1
+Pepito
+1 1 1
+***
