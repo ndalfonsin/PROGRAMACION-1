@@ -32,4 +32,5 @@ begin
 				i:= i + 1;
 				end;		
 		end;
+  	Close(Arch);
 end.
