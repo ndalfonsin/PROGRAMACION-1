@@ -58,7 +58,7 @@ Es un modulo de codigo independiente que se ejuta cuando es invocado o llamado p
     Insert('cha', Palabra, 3) {Inserta 'cha' a partir de la posicion 3 de la cadena}
 
 
-### Funciones matematicas
+# Funciones matematicas
     
     Abs(RealOInteger) {valor absoluto}
     Frac(Real) {la parte decimal}
@@ -71,14 +71,14 @@ Es un modulo de codigo independiente que se ejuta cuando es invocado o llamado p
     Upcase(string) {Mayuscula}
     Odd(Entero) {(true)>0 o (false)<0}
 
-### Funciones especiales
+# Funciones especiales
 
     Ord(ordinal) {Devuelve el numero ordinal}
     Chr(byte) {Devuelve el caracter}
     Succ(ordinal) {Devuelve el sucesor del argumento, error si no lo tiene}
     Pred(ordinal) {Devuelve el predecesor del argumento, " " " "}
 
-### Funciones en cadenas de caracteres
+# Funciones en cadenas de caracteres
 
     Length(String) {Longitud del string}
     Pos(S1,S2) {Devuelve la posicion donde comienza la cadena S1 en la cadena S2} {Si no existe devuelve 0}
