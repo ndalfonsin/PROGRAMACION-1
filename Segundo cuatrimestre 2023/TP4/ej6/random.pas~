@@ -1,0 +1,24 @@
+Program NAlteatorio;
+
+{Desarrollar una funcion que devuelva un numero aleatorio en un rango [A, B] con A<B ingresados por teclado. Nota: usar la funcion random y randomize}
+
+function Aleatorio(A,B: integer):integer;
+	var
+		aux: integer;	
+	Begin
+		repeat
+			randomize;			
+			aux:= Random(B+1);
+		until(A<aux);
+		Aleatorio:= aux;
+	End;
+
+var
+	A, B: integer;
+
+Begin
+	writeln('Ingrese [A, B] con A<B para devolver un numero aleatorio');
+	write('Ingrese A: ')readln(A);
+	write('Ingrese B: ')readln(B);
+	writeln(Aleatorio(A,B));
+End.
