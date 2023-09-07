@@ -17,7 +17,7 @@ Function Impuesto(esRI: char; facturacion:real):real;
 		RI = 0.31;
 		notRi = 0.21;
 	Begin
-		if esRi then
+		if (esRi = 'S') then
 			Impuesto:= facturacion * RI
 		else
 			Impuesto:= facturacion * notRi;
@@ -31,12 +31,13 @@ var
 	
 
 Begin
-	menFact:= 99999.99;
+	menFact:=1000000000; {el valor maximo es 34000000000.0}
+	ctr:= ' ';
 	Repeat
-		Write('Ingrese el nombre del comercio: ');readln(Nombre)
-		Write('Es responsable inscripto? [S]si [N]no');readln(esRI);
+		Write('Ingrese el nombre del comercio: ');readln(Nombre);
+		Write('Es responsable inscripto? [S]si [N]no: ');readln(esRI);
 		Write('Cuantos meses tiene registrados?: ');readln(N);
-		Write('Ingrese el importe mensual facturado sin IVA');readln(facturacion);
+		Write('Ingrese el importe mensual facturado sin IVA: ');readln(facturacion);
 		writeln;
 		writeln('Datos ingresados: ');
 		writeln('Nombre: ',Nombre);
@@ -48,10 +49,12 @@ Begin
 
 		writeln('Cantidad de meses facturados: ',N);
 		writeln('Facturacion de IVA por ',N,' meses: $',Impuesto(esRI, facturacion):4:2);
-
+		writeln;
 		if (facturacion<menFact) then		
 			nombreMenFac := nombre;
-
-
+		writeln('Desea seguir ingresando comercios? [S]si, [N]no');readln(ctr);
+		writeln;
 	Until (ctr = 'N');
+	writeln('El comercio que menos pago de iva es: ',nombreMenFac);
+	readln;
 End.	

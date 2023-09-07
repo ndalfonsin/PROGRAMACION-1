@@ -1,0 +1,60 @@
+Program fracciones;
+
+{Dado un archivo de texto que contiene en la misma linea 4 numeros (N1,D1,N2,D2) numerador y denominador de dos fraciones. Se pide leer los pares e informar: 
+	a- La suma como fraccion
+	b- El producto como fraccion}
+
+
+{Algoritmo de Euclides}
+
+function mcd(D1,D2:integer):integer;
+	var
+		r, aux:integer;	
+	begin
+		if D1 < D2 then
+			begin
+				aux:= D1;
+				D1:= D2;
+				D2:= aux;
+			end;
+		
+		r:= D1 mod D2;
+
+		while (r <> 0) do
+			begin
+				D1:= D2;
+				D2:= r;
+				r:= D1 mod D2;
+			end;
+		mcd:= D2;
+	end;
+
+function sumaNumeradores(N1, N2, D1, D2: integer): integer;
+	var
+		newN1, newN2, den: real;
+	Begin
+		den:= mcd(D1,D2);
+		newN1:= (den div D1)*N1;
+		newN2:= (den div D2)*N2;
+		
+		sumaNumeradores:= newN1 * newN2;
+	End;
+
+function productoDirect(N1,N2:integer):integer;
+	begin
+		productoDirect:= N1 * N2;
+	end;
+
+const
+	N1 = 1;
+	N2 = 1;
+	D1 = 2;
+	D2 = 2;
+
+Begin
+	writeln('Suma de Fracciones: ');
+	writeln(sumaNumeradores(N1,N2,D1,D2));
+	writeln('Producto de fracciones: ');
+	writeln(productoDirect(N1, N2),'/',productoDirect(D1, D2));	
+	readln;
+end.

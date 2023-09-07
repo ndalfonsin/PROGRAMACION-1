@@ -41,7 +41,3 @@ Si en el procedimiento los valores de las variables cambian su valor es necesari
 		cambio(x);
 		writeln(x); {=> 1}
 	end;
-
-el var lo que hace es pasar la direccion de memoria de la variable {global} y permite al procedimiento alterar su valor. 
-
-

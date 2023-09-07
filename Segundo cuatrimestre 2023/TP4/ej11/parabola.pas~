@@ -1,0 +1,63 @@
+Program parabola;
+
+{Dada la ecuacion de una parabola y=ax²+bx+c escribir un programa mediante un menu de opciones interativo:
+	-Encontrar el eje de simetria sabiendo que x=-b/(2.a) y si esyto representa un minimo o un maximo
+	-Informar hacia donde es abierta la parabola
+	-Calcular y mostrar las raices, informar en caso que no existan. Para ello se debe analizar si el discriminante es mayor, menor o igual a cero.
+	-Dado un conjunto de valores de x informar su imagen}
+
+Uses
+	Crt;
+
+Procedure menu(a,b,c:real);
+	Begin
+		ClrScr;	
+		writeln('Calculadora de parabolas');
+		writeln('Su formula: ',a:1:1,'x²+',b:1:1,'x+',c:1:1);
+		writeln('1: Eje de simetria');
+		writeln('2: Sentido de la parabola');
+		writeln('3: Raices');
+		writeln('4: Imagen a partir de x');
+		writeln('0: Salir');
+	End;
+
+Function simetria(a,b:real):real;
+	Begin
+		simetria:= -b/(2*a);
+	End;
+
+Procedure main(a,b,c:real; ctl:byte);
+	Begin
+		repeat			
+			menu(a,b,c);
+			write('Ingrese su opcion: ');readln(ctl);
+			ClrScr;
+			case ctl of					
+					1: writeln('El eje de simetria se encuentra en x=',simetria(a,b):2:1);
+			end;
+		writeln;
+		if ctl <> 0 then
+			write('Presione ENTER para continuar');readln;
+		until (ctl = 0);
+	End;
+
+Procedure ingresoDatos(var a,b,c:real);
+	Begin
+		ClrScr;		
+		writeln('La formula a ingresar es: y=ax²+bx+c');
+		write('Ingrese a: ');readln(a);
+		write('Ingrese b: ');readln(b);
+		write('Ingrese c: ');readln(c);
+	End;
+
+Var
+	ctl: byte;
+	a, b, c: real;
+Begin
+	a:=0;
+	b:=0;
+	c:=0;
+	ctl:= 0;
+	ingresoDatos(a,b,c);	
+	main(a,b,c,ctl);
+End.
