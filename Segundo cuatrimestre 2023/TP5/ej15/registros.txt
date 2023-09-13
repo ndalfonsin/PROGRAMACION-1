@@ -1,0 +1,7 @@
+cerealera ABC123 1 40
+natura FFF444 2 60
+luchetti EEE987 4 90
+marolio TTT888 3 100
+cerealera HHH900 4 90
+natura UUU890 4 80
+natura OPP000 1 90
