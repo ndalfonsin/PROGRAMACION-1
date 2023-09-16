@@ -14,6 +14,7 @@ Se pide que lea los datos desde un archivo y mediante un menu de opciones intera
 Generar un archivo de texto que represente los resultados de la busqueda}
 Uses
     Crt;
+
 type
     str6 = string[6];
     TVstring = Array[1..10] of string;
@@ -37,43 +38,43 @@ type
 //         leeChar:= cliente;
 //     End;
 
-Procedure AsignaArray(var cliente: TVstring; var patente: TVstr6; var tipo: TVbyte; var toneladas: TVreal; linea: string; N:byte);
-    var 
-        ch: char;
-        J: byte;
-        aux: string;
-        auxbyte: byte;
-    begin
-        J:= 0;
-        ch:= linea[J];
-
-        while ch <> ' ' do
-            cliente[N]:= cliente[N] + ch;
-            J:= J + 1;
-            ch:= linea[J];
-        
-        patente[N]:= Copy(linea, J, 6);
-        auxbyte:= Copy(linea, J+8, 1);
-        tipo[N]:= Val(auxbyte, tipo[N]);
-        toneladas[N]:= Copy(StrToFloat(linea, J+10, Length(linea)));
-    end;
-
 Procedure LecturaArchivo(var cliente: TVstring; var patente: TVstr6; var tipo: TVbyte; var toneladas: TVreal; var N: byte);
 var 
     arch: text;
-    client, linea: string;
+    ch: char;
+    client, patent: string;
 Begin
     N := 1;
     Assign(arch, 'registros.txt');
     Reset(arch);
     
     while not EOF(arch) do
-    Begin
-        readln(arch,linea);
-        AsignaArray(cliente, patente, tipo, toneladas linea, N);
-        
-        N := N + 1;
-    End;
+        Begin
+          client:= '';
+          patent:= '';
+        //   while not EOLN(arch) do
+        //     begin
+                read(arch, ch);
+
+                while ch <> ' ' do
+                    begin
+                        client:= client + ch;
+                        read(arch, ch);
+                    end;
+                cliente[N]:= client;
+                read(arch, ch);
+                
+                while ch <> ' ' do
+                    begin
+                        patent:= patent + ch;
+                        read(arch, ch);
+                    end;
+                patente[N]:= patent;
+
+                read(arch, tipo[N], ch, toneladas[N]);
+                N:= N + 1;
+            // end;
+        End;
 
     Close(arch);
 End;
@@ -89,10 +90,8 @@ Procedure LeeArray(cliente: TVstring; patente:TVstr6; tipo:TVbyte; toneladas:TVr
                 writeln('Patente: ',patente[i]);
                 writeln('Tipo: ',tipo[i]);
                 writeln('toneladas: ',toneladas[i]);
-                writeln(i);
                 writeln;
             End;
-            writeln(N);
     End;
 
 
