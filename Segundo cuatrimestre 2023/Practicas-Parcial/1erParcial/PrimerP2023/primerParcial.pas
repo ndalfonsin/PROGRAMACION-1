@@ -69,29 +69,33 @@ Procedure asignacionAsiento(var asiento: TVbyte; cantAsientos, N: byte; COD: TVs
                     asiento[i]:= 1
                 else
                     begin
-                        if (COD[i-1] = COD[i])and(reverse=False) then
+                        if reverse then
                             begin
-                                asiento[i]:= asiento[i-1] + 1;
-                                ultCreciente:= asiento[i];
-                            end
-                        Else if (COD[i-1] = COD[i])and(reverse=True) then
+                                if COD[i-1] = COD[i] then
+                                    begin
+                                        asiento[i]:= asiento[i-1] - 1;
+                                        ultDecr:= asiento[i];
+                                    end
+                                else
+                                    begin
+                                        asiento[i]:= ultCreciente + 1;
+                                        reverse:= False;
+                                    end;
+                            end    
+                        else
                             begin
-                                asiento[i]:= asiento[i-1] - 1;
-                                ultDecr:= asiento[i];
-                            end
-                        Else if (COD[i-1] <> COD[i])and(reverse=False) then
-                            begin
-                                asiento[i]:= ultDecr - 1;
-                                reverse:= True;
-                            end
-                        Else if (COD[i-1] <> COD[i])and(reverse=True) then
-                            begin
-                                asiento[i]:= ultCreciente + 1;
-                                reverse:= False;
-                            end;    
+                                if COD[i-1] = COD[i] then
+                                    begin
+                                        asiento[i]:= asiento[i-1] + 1;
+                                        ultCreciente:= asiento[i];
+                                    end
+                                else
+                                    begin
+                                        asiento[i]:= ultDecr - 1;
+                                        reverse:= True;
+                                    end;
+                            end;
                     end;
-
-                
             end;
     end;
 {Procedimiento de comprobacion de carga de datos}
@@ -128,7 +132,7 @@ Procedure asientoXDni(asiento: TVbyte; DNI: TVstr8; N:byte);
         ClrScr;
 
         if buscaXDNI(busqueda, DNI, N) <> 0 then
-            writeln('El DNI ',busqueda,' tiene asignado el asiento ',buscaXDNI(busqueda, DNI, N))
+            writeln('El DNI ',busqueda,' tiene asignado el asiento ',asiento[buscaXDNI(busqueda, DNI, N)])
         else
             writeln('El DNI ingresado no es valido o no ha realizado el checkin');
     end;
