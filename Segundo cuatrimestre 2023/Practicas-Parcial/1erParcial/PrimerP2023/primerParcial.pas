@@ -168,7 +168,7 @@ Procedure muestraPromEdad(edad: TVbyte; equipaje: TVreal; N:byte);
             end;
 
         ClrScr;
-        promedio:= acumEdad div cont;
+        promedio:= acumEdad / cont;
         writeln('El promedio de edad es de ', promedio:4:2);
 
     end;
