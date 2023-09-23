@@ -126,7 +126,7 @@ var
     vel, multZona, costo: TVreal;
     zona, codZona: TVSTR3;
     patente: TVSTR7;
-    Nv1, Nv2, contErr: byte; {delimitadores de cada tipo de vector paralelo}
+    Nv1, Nv2, contErr, i: byte; {delimitadores de cada tipo de vector paralelo}
     {multZona y codZona pertenecen a Nv2, vector paralelo de almacenamiento de
     multiplicadores de infracciones segun zona}
 begin
@@ -134,9 +134,8 @@ begin
     CargaDatosRadar(tipoVehiculo, vel, zona, patente, Nv1, contErr);
     cargaVectorCosto(costo, tipoVehiculo, zona, codZona, multZona, Nv1, Nv2);
     writeln(contErr,' Lecturas del radar no son infracciones');
-    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])]:4:2);
-    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])]:4:2);
-    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])]:4:2);
-    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])]:4:2);
+    
+    for i:=1 to Nv2 do
+        writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[i])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[i])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[i])]:4:2);
     readln();
 end.
