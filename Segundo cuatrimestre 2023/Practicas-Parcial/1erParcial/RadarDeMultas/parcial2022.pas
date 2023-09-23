@@ -105,7 +105,7 @@ Procedure cargaVectorCosto(var costo: TVreal; tipoVehiculo: TVbyte; zona, codZon
             end;
     end;
 
-Function BuscaElMayorCosto(costo: TVreal; Nv1: byte):byte;
+Function BuscaElMayorCostoXzona(costo: TVreal; Nv1: byte; zona: TVSTR3; Nv2:byte; codZonaBusq: STR3):byte;
     var
         i: byte;
         costoAnt: real;
@@ -113,10 +113,10 @@ Function BuscaElMayorCosto(costo: TVreal; Nv1: byte):byte;
         costoAnt:= 0.0;
         for i:= 1 to Nv1 do
             begin
-                if costo[i]>costoAnt then
+                if (zona[i] = codZonaBusq)and(costo[i]>costoAnt) then
                     begin
                         costoAnt:= costo[i];
-                        BuscaElMayorCosto:= i;
+                        BuscaElMayorCostoXzona:= i;
                     end;
             end;
     end;
@@ -134,6 +134,9 @@ begin
     CargaDatosRadar(tipoVehiculo, vel, zona, patente, Nv1, contErr);
     cargaVectorCosto(costo, tipoVehiculo, zona, codZona, multZona, Nv1, Nv2);
     writeln(contErr,' Lecturas del radar no son infracciones');
-    writeln('La patente que mas debe pagar en infracciones es "',patente[BuscaElMayorCosto(costo, Nv1)],'" con un total de $',costo[BuscaElMayorCosto(costo, Nv1)]:4:2);
+    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[1])]:4:2);
+    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[2])]:4:2);
+    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[3])]:4:2);
+    writeln('La patente que mas debe pagar en infracciones en la zona ',zona[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])],' es "',patente[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])],'" con un total de $',costo[BuscaElMayorCostoXzona(costo, Nv1, zona, Nv2, codZona[4])]:4:2);
     readln();
 end.
