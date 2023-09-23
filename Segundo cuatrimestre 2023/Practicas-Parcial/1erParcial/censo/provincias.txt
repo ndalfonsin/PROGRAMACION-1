@@ -1,0 +1,8 @@
+BA Buenos Aires C 4 
+CH Chubut S 4 
+SC Santa Cruz S 3 
+CO Cordoba C 3 
+LP La Pampa C 2 
+SA Salta N 2 
+SF Santa Fe C 3 
+JU Jujuy N 5
