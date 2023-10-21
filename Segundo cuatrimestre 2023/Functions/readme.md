@@ -16,3 +16,11 @@
                 Busqueda:= i;
         end;
 
+Busqueda(pepito, chanchito, feliz);
+
+    A B 
+
+    repeat
+        writeln(jnngkernkrg);readln(variable);
+        variable:= upcase(variable);
+    until (variable='A')or(variable='B');
