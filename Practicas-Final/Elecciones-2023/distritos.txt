@@ -1,0 +1,100 @@
+1
+Buenos Aires
+2
+Cordoba
+3
+Santa Fe
+4
+Mendoza
+5
+Tucuman
+6
+Entre Rios
+7
+Salta
+8
+Misiones
+9
+Chaco
+10
+Corrientes
+11
+Santiago del Estero
+12
+San Juan
+13
+Jujuy
+0014
+Rio Negro
+15
+Formosa
+16
+Neuquen
+17
+Chubut
+18
+San Luis
+19
+Catamarca
+20
+La Rioja
+21
+La Pampa
+22
+Santa Cruz
+23
+Tierra del Fuego
+24
+CA de Buenos Aires
+25
+Almirante Brown
+26
+La Matanza
+27
+Lomas de Zamora
+28
+Quilmes
+29
+Merlo
+30
+General San Martin
+31
+Moreno
+32
+Florencio Varela
+33
+Tigre
+34
+Avellaneda
+35
+Lanus
+36
+Berazategui
+37
+Malvinas Argentinas
+38
+Vicente Lopez
+39
+Moron
+40
+San Isidro
+41
+Esteban Echeverria
+42
+Tres de Febrero
+43
+Hurlingham
+44
+Ezeiza
+45
+Ituzaingo
+46
+Pilar
+47
+Presidente Peron
+48
+San Fernando
+49
+Escobar
+50
+Bahia Blanca
