@@ -1,0 +1,100 @@
+1 Max Verstappen
+43.90
+2 Lewis Hamilton
+44.30
+3 Sergio Pérez
+44.70
+4 Charles Leclerc
+45.15
+5 Lando Norris
+45.67
+6 Daniel Ricciardo
+46.00
+7 Valtteri Bottas
+46.22
+8 George Russell
+46.50
+9 Carlos Sainz
+47.10
+10 Sebastian Vettel
+47.25
+11 Fernando Alonso
+47.40
+12 Esteban Ocon
+47.60
+13 Kimi Räikkönen
+48.00
+14 Robert Kubica
+48.30
+15 Nicholas Latifi
+48.50
+16 Yuki Tsunoda
+48.70
+17 Mick Schumacher
+49.00
+18 Nikita Mazepin
+49.20
+19 Antonio Giovinazzi
+49.50
+20 Pierre Gasly
+49.80
+21 Lance Stroll
+50.00
+22 Nico Hülkenberg
+50.20
+23 Romain Grosjean
+50.50
+24 Takuma Sato
+50.70
+25 Adrian Sutil
+50.90
+26 Pastor Maldonado
+51.00
+27 Bruno Senna
+51.20
+28 Giancarlo Fisichella
+51.40
+29 Heikki Kovalainen
+51.60
+30 Jarno Trulli
+51.80
+31 Jenson Button
+52.00
+32 Rubens Barrichello
+52.20
+33 Mark Webber
+52.40
+34 Sebastian Vettel
+52.60
+35 Felipe Massa
+52.80
+36 Michael Schumacher
+53.00
+37 Juan Pablo Montoya
+53.20
+38 David Coulthard
+53.40
+39 Jacques Villeneuve
+53.60
+40 Olivier Panis
+53.80
+41 Jean Alesi
+54.00
+42 Nelson Piquet Jr.
+54.20
+43 Nelson Piquet
+54.40
+44 Emerson Fittipaldi
+54.60
+45 Jackie Stewart
+54.80
+46 Graham Hill
+55.00
+47 Jim Clark
+55.20
+48 Stirling Moss
+55.40
+49 Juan Manuel Fangio
+55.60
+50 Alberto Ascari
+55.80

@@ -1,0 +1,10 @@
+1 Red Bull Racing
+2 Mercedes
+3 Ferrari
+4 McLaren
+5 Alpine
+6 Aston Martin
+7 Alfa Romeo
+8 Haas
+9 Williams
+10 AlphaTauri
