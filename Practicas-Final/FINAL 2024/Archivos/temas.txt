@@ -1,0 +1,51 @@
+000001 1
+Melodia del Alba
+1 100
+000001 3
+Ritmo de la Noche
+1 200
+000001 1
+Bajo la Lluvia
+0 130
+000002 2
+Cumbia del Sur
+0 150
+000003 1
+Sinfonia del Viento
+1 120
+000004 5
+Oda a la Luna
+1 180
+000005 2
+En la Playa
+1 110
+000006 3
+Estrellas en el Cielo
+1 140
+000007 1
+Fuego en la Montana
+1 160
+000008 4
+Cantos de la Selva
+1 170
+000009 2
+La Marcha del Desierto
+0 190
+000010 3
+Ecos de la Tierra
+1 150
+000011 1
+Viento de Primavera
+1 155
+000012 5
+Brisa del Mar
+1 200
+000014 3
+Ritmica del Horizonte
+0 140
+000015 1
+Suenos en el Valle
+1 180
+000016 5
+Noche Estrellada
+1 190
