@@ -1,0 +1,60 @@
+Juan Perez
++541123456789
+2
+Ana Gomez
++541987654321
+1
+Luis Fernandez
++541234567890
+3
+Maria Lopez
++541345678901
+2
+Pedro Martinez
++541456789012
+4
+Laura Silva
++541567890123
+1
+Carlos Rodriguez
++541678901234
+2
+Patricia Gonzalez
++541789012345
+3
+Marta Gomez
++541890123456
+2
+Roberto Maldonado
++541901234567
+1
+Sofia Morales
++541012345678
+2
+Hector Fernandez
++541123098765
+3
+Valeria Rivas
++541234567654
+1
+Gabriel Hernandez
++541345678987
+4
+Norma Sanchez
++541456789321
+2
+Manuel Alvarez
++541567890456
+1
+Fernanda Perez
++541678901654
+3
+Tomas Ortiz
++541789012678
+2
+Isabel Jimenez
++468483998475
+1
+xxxxxxxxxxxxxx
+xxxxxxxxxxxxxx
+0

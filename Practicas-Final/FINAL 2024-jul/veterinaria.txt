@@ -1,0 +1,210 @@
+Juan Perez
+Firulais
+0010
+20240701
+S
+Juan Perez
+Toby
+0020
+20240701
+S
+Ana Gomez
+Canela
+0030
+20240702
+N
+Luis Fernandez
+Milo
+0040
+20240703
+S
+Luis Fernandez
+Rex
+0050
+20240704
+N
+Maria Lopez
+Rita
+0060
+20240705
+S
+Pedro Martinez
+Toby
+0070
+20240706
+S
+Pedro Martinez
+Leo
+0080
+20240707
+S
+Laura Silva
+Mimi
+0090
+20240708
+N
+Jorge Ramirez
+Sasha
+0020
+20240711
+N
+Carlos Rodriguez
+Duke
+0100
+20240709
+S
+Patricia Gonzalez
+Milo
+0010
+20240710
+S
+Carmen Paredes
+Tina
+0030
+20240712
+S
+Ricardo Guerra
+Rocky
+0040
+20240713
+N
+Sandra Martinez
+Luna
+0050
+20240714
+S
+Antonio Vargas
+Kira
+0060
+20240715
+N
+Veronica Luna
+Zeus
+0070
+20240716
+S
+Martin Lopez
+Bruno
+0080
+20240717
+S
+Elena Diaz
+Nina
+0090
+20240718
+N
+Luis Mendoza
+Rex
+0100
+20240719
+S
+Olga Cruz
+Mia
+0010
+20240720
+S
+Julio Sanchez
+Duke
+0020
+20240721
+N
+Gabriela Soto
+Bella
+0030
+20240722
+S
+Hugo Rivas
+Nina
+0040
+20240723
+N
+Rosa Castro
+Luna
+0050
+20240724
+S
+Alfredo Cordero
+Rex
+0060
+20240725
+S
+Miranda Castillo
+Leo
+0070
+20240726
+N
+Esteban Gutierrez
+Milo
+0080
+20240727
+S
+Margarita Perez
+Milo
+0090
+20240728
+N
+Victor Hernandez
+Rex
+0100
+20230729
+S
+Paola Gonzalez
+Toby
+0010
+20230730
+N
+Fernando Silva
+Coco
+0020
+20230801
+S
+Claudia Bravo
+Lola
+0030
+20230802
+N
+Samuel Reyes
+Toby
+0040
+20230803
+S
+Lucia Mora
+Rex
+0050
+20230804
+N
+Ricardo Luna
+Bella
+0060
+20230805
+S
+Gabriela Mendez
+Nina
+0070
+20230806
+N
+Felipe Gomez
+Luna
+0080
+20230807
+S
+Adriana Vargas
+Zeus
+0090
+20230808
+S
+Sebastian Ortiz
+Kira
+0100
+20230809
+N
+Isabel Jimenez
+Rex
+0010
+20240810
+S
+xxxxxxxx
+xxxxxxxx
+xxxx
+xxxxxxxx
+x

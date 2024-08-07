@@ -1,0 +1,42 @@
+0010 Consulta
+150
+0020 Vacuna
+200
+0030 Desparasitacion
+100
+0040 Operativo
+500
+0050 ControlDental
+250
+0060 Revisión
+180
+0070 Cirugía
+400
+0080 ExamenGeneral
+300
+0090 VisitaACasa
+350
+0100 ExamenSanguineo
+220
+0110 LimpiezaDental
+130
+0120 Ultrasonido
+280
+0130 Radiografía
+350
+0140 TerapiaFísica
+270
+0150 TratamientoOjo
+190
+0160 PruebaAlergias
+210
+0170 Desinfección
+160
+0180 ConsultaOnline
+140
+0190 AsesoríaNutricional
+230
+0200 Esterilización
+400
+xxxx xxxxxxxxxxxxxx
+000
